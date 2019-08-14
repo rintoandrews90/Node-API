@@ -1,12 +1,9 @@
-# API
+# API Using Node.js
 
-## Routing
+ - Routing
+ - Serving HTML, JSON
+ - Serving Static Assets
+ - Serving Dynamic Templates
 
-## Serving HTML, JSON
-
-## Serving Static Assets
-
-## Serving Dynamic Templates
-
-### Branch: Customize View Directory, Partials, Custom Header/Components, 404 Page
+### `Branch: Customize View Directory, Partials, Custom Header/Components, 404 Page`
 
