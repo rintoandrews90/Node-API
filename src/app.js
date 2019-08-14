@@ -13,6 +13,8 @@ console.log(path.join(__dirname,'../public'));
 const app = express()
 const publicDirPath = path.join(__dirname,'../public')
 
+//Customize View Directory
+
 //Dynamic Templates
 app.set('view engine', 'hbs')
 // http://localhost:3000/
