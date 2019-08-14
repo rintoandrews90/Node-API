@@ -4,6 +4,8 @@
 
 //npm install express --save
 
+//npm install hbs
+
 const path = require('path')
 const express = require('express')
 
@@ -12,6 +14,8 @@ console.log(path.join(__dirname,'../public'));
 
 const app = express()
 const publicDirPath = path.join(__dirname,'../public')
+
+app.set('view engine','hbs')
 app.use(express.static(publicDirPath))
 
 // app.com
