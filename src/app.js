@@ -13,6 +13,9 @@ console.log(path.join(__dirname,'../public'));
 
 const app = express()
 const publicDirPath = path.join(__dirname,'../public')
+
+app.use(express.static(path.resolve(publicDirPath)));
+
 const viewPath = path.join(__dirname,'../templates/views')
 const paritilasPath = path.join(__dirname,'../templates/partials')
 //Customize View Directory
@@ -54,6 +57,13 @@ app.get('/help', (req, res) => {
 //Static Text
 app.get('/wheather', (req, res) => {
     res.send('Currenty weather')
+})
+
+app.get('/help/*',(req,res) => {
+    res.send('help article not found')
+})
+app.get('*',(req,res) => {
+    res.send("MY 404 Page")
 })
 
 // http://localhost:3000/
