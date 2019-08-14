@@ -6,23 +6,28 @@
 
 const path = require('path')
 const express = require('express')
+const hbs = require('hbs')
 
 console.log(__dirname);
 console.log(path.join(__dirname,'../public'));
 
 const app = express()
 const publicDirPath = path.join(__dirname,'../public')
-
+const viewPath = path.join(__dirname,'../templates/views')
+const paritilasPath = path.join(__dirname,'../templates/partials')
 //Customize View Directory
 
 //Dynamic Templates
 app.set('view engine', 'hbs')
+app.set('views',viewPath)
+hbs.registerPartials(paritilasPath)
 // http://localhost:3000/
 // Provide index page
 app.get('', (req,res) => {
     res.render('index', {
         title:'Weather App',
-        name:'Rinto Andrews'
+        name:'Rinto Andrews',
+        headerTitle:'This is used in header.hbs'
     })
 })
 // http://localhost:3000/about

@@ -8,4 +8,4 @@
 
 ## Serving Dynamic Templates
 
-### Branch: Customize View Directory 
+### Branch: Customize View Directory, Partials, Custom Header/Components
