@@ -13,6 +13,9 @@ console.log(path.join(__dirname,'../public'));
 
 const app = express()
 const publicDirPath = path.join(__dirname,'../public')
+
+app.use(express.static(path.resolve(publicDirPath)));
+
 const viewPath = path.join(__dirname,'../templates/views')
 const paritilasPath = path.join(__dirname,'../templates/partials')
 //Customize View Directory
