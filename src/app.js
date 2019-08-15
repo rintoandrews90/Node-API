@@ -4,6 +4,7 @@
 //npm install express --save
 //npm install hbs
 
+const request = require('request')
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
@@ -59,6 +60,20 @@ app.get('/wheather', (req, res) => {
     res.send('Currenty weather')
 })
 
+
+app.get( '/products', (req, res) => {
+    // return stop executing rest of functions
+    if(!req.query.search) {
+        return res.send({
+            error:'you must provide search query'
+        })
+    }
+    res.send({
+        products: req.query.search
+    })
+})
+
+
 app.get('/help/*',(req,res) => {
     res.send('help article not found')
 })
@@ -70,3 +85,5 @@ app.get('*',(req,res) => {
 app.listen(3000, () => {
     console.log('Server is up on 3000')
 })
+
+
